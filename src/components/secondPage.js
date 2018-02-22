@@ -5,16 +5,16 @@ var Link = require('react-router-dom').Link;
 var createReactClass = require('create-react-class');
 
 
-var Authors = createReactClass({
+var SecondPage = createReactClass({
 	render: function() {
 		return (
 			<div className="jumbotron">
-				<h1>Authro page</h1>
-				<p>This isGombsgvjkl;asfd</p>
+				<h1>Second page</h1>
+				<p>This is fine</p>
 				{/* <Link to="about" className="btn btn-primary btn-lg">Link to a basic second component</Link> */}
 			</div>
 		);
 	}
 });
 
-module.exports = Authors;
+module.exports = SecondPage;

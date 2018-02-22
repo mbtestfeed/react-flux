@@ -4,7 +4,7 @@ var React = require('react');
 $ = jQuery = require('jquery');
 var ReactRouter = require('react-router-dom');
 var HomePage = require('./components/homePage');
-var AuthorPage = require('./components/authorPage');
+var SecondPage = require('./components/secondPage');
 var createReactClass = require('create-react-class');
 
 var Route = ReactRouter.Route;
@@ -18,12 +18,7 @@ var App = createReactClass({
 				<div className="container-fluid">
 					<Switch>
 						<Route exact path="/" component={HomePage}/>
-						<Route path="/authors" component={AuthorPage}/>
-						{/*
-						<Route path="/author" component={ManageAuthorPage} exact />
-						<Route path="/author/:id" component={ManageAuthorPage}/>
-						<Route path="/about" component={AboutPage}/>
-						<Route component={NotFoundPage}/> */}
+						<Route path="/second" component={SecondPage}/>
 					</Switch>
 				</div>
 			</div>
