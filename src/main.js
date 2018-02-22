@@ -2,18 +2,14 @@
 
 var React = require('react');
 var ReactDom = require('react-dom');
-var ReactRouter = require('react-router-dom');
-// var App = require('./components/app');
+var Router = require('react-router-dom').BrowserRouter;
+var App = require('./App');
 
-var Router = ReactRouter.BrowserRouter;
-var Route = ReactRouter.Route;
+// var routes = require('./routes');
+
 // var InitializeActions = require('./actions/initializeActions');
 //
 // InitializeActions.initApp();
 
-ReactDom.render(
-    <Router>
-        {/* <Route path="/" component={App} /> */}
-        <p>Hi there</p>
-    </Router>, document.getElementById('app')
-);
+ReactDom.render(<Router><App/></Router>, document.getElementById('app'));
+// ReactDom.render(<div>Say hi to your mom</div>, document.getElementById('app'));
