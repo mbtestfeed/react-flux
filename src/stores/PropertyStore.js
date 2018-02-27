@@ -3,6 +3,7 @@ var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
 var Dispatcher = require('../dispatcher/Dispatcher');
 var ActionTypes = require('../constants/ActionConstants').PropertyService;
+var ApiUtils = require('../utils/PropertyServiceAPIUtils');
 
 var CHANGE_EVENT = 'change';
 var _errors = [];
@@ -27,8 +28,14 @@ var PropertyStore = assign({}, EventEmitter.prototype, {
 });
 
 PropertyStore.dispatchToken = Dispatcher.register(function(payload){
+  console.log("in store");
   switch (payload.type) {
+    case ActionTypes.PROPERTY_REQUEST:
+      console.log("hitting it");
+      ApiUtils.getProperty(payload.property);
+      break;
     case ActionTypes.PROPERTY_RESPONSE:
+      console.log("in respoinse");
       if (payload.json) {
         _property = payload.json;
         _errors = [];
